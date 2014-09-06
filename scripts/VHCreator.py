@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*-coding:utf-8-*-
 __author__ = 'ugursogukpinar'
 
 import os,sys
@@ -37,10 +39,13 @@ class VHCreator(object):
             sys.exit(1) #  Return with exit
 
 
+    # Add virtual host script to conf file
     def addVirtualHost(self,serverName,serverPort=80,alias=''):
         virtualHostStr = __VIRTUALHOST__.format(serverPort,self.virtualHostDirectory,serverName)
         self.writeToFile(self.configFilePath,virtualHostStr)
 
+
+    # Add /etc/hosts (posix) server name
     def addHostName(self,serverName):
         hostsFilePath = __ETCHOSTS__[os.name.strip()]
         self.checkPathsExist(hostsFilePath)
@@ -48,6 +53,7 @@ class VHCreator(object):
         self.writeToFile(hostsFilePath,hostString)
 
 
+    # Write given string to given file
     def writeToFile(self,fileDirectory,string):
         try:
             file = open(fileDirectory,'a')

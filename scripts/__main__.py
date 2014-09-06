@@ -1,11 +1,14 @@
+#!/usr/bin/env python
+#-*-coding:utf-8-*-
+
 __author__ = 'ugursogukpinar'
 
 
-import parser
+import arguments
 from VHCreator import VHCreator
 
 def __main__():
-    args = parser.getArgs()
+    args = arguments.getArgs()
 
     if(not args.conf ):
         args.conf = "/usr/local/zend/apache2/conf/extra/httpd-vhosts.conf"
