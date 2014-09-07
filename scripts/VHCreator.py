@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*-coding:utf-8-*-
 __AUTHOR__ = 'ugursogukpinar'
-__VERSION__ = '0.1.0'
+
 
 import os,sys
 

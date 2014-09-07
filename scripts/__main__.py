@@ -2,12 +2,12 @@
 #-*-coding:utf-8-*-
 
 __AUTHOR__ = 'ugursogukpinar'
-__VERSION__ = '0.1.0'
+
 
 from arguments import Arguments
 from VHCreator import VHCreator
 
-def __main__():
+def main():
     __Arguments = Arguments()
     args = __Arguments.getArgs()
 
@@ -18,5 +18,5 @@ def __main__():
         __VHCreator.addHostName(args.servername)
 
 if __name__ == "__main__":
-    __main__()
+    main()
 
