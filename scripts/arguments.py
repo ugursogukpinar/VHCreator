@@ -23,13 +23,19 @@ class Arguments(object):
         parser = argparse.ArgumentParser()
         parser.add_argument('servername',help='VirtualHost server name')
         parser.add_argument('directory', help='VirtualHost document root')
-        parser.add_argument('-g','--git',help='Git repostiroy url to clone given directory',default=False)
-        parser.add_argument('-cf','--conf',help='VirtualHosts configuration file path',default=False)
+        parser.add_argument('-cf','--conf',help='VirtualHosts configuration file path.',default=False)
         parser.add_argument('-ho','--host', action="store_true" , help='With this option you can insert your server name into hosts file.',default=False)
+
+        # To next version
+        # parser.add_argument('-g','--git',help='Git repostiroy url to clone given directory',default=False)
+        # parser.add_argument('-a','--alias', help='You can give an alias virtual host',default=False)
+
         self.args = parser.parse_args()
 
-        if(len(self.args.conf)):
+        if(self.args.conf):
             self.setConfFile(self.args.conf)
+        else:
+            self.args.conf = self.getConfFilePath()
 
     def getArgs(self):
         return self.args
@@ -38,7 +44,7 @@ class Arguments(object):
         try:
             tmpFile = open(__TMPFILES__[os.name],'r')
             confFilePath = tmpFile.readline().strip()
-            self.args.conf = confFilePath
+            return confFilePath
         except:
             self.returnError('conffilenotfound',(__TMPFILES__[os.name]))
 

@@ -5,8 +5,8 @@ __author__ = 'ugursogukpinar'
 import os,sys
 
 __ERRORS__ = {
-    'notfound' : '{} file not found.',
-    'notopen' : '{} can\'t open. Try with root priviliges.'
+    'notfound' : '\n{} file not found.',
+    'notopen' : '\n{} can\'t open. Try with root priviliges.'
 }
 
 __VIRTUALHOST__ = '''\n
@@ -30,7 +30,6 @@ class VHCreator(object):
         self.configFilePath = configFilePath
         self.virtualHostDirectory = virtualHostDirectory
         self.checkPathsExist(self.configFilePath)
-        # self.checkPathsExist(self.virtualHostDirectory)
 
     # Check configuration file exist
     def checkPathsExist(self,filePath):
