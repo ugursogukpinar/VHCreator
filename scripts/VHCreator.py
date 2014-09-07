@@ -9,21 +9,21 @@ __ERRORS__ = {
     'notopen' : '{} can\'t open. Try with root priviliges.'
 }
 
-__VIRTUALHOST__ = '''
+__VIRTUALHOST__ = '''\n
     # Added with VHCreator
     # Alias of VirtualHost \'{3}\'
     <VirtualHost *:{0}>
         DocumentRoot : {1}
         ServerName : {2}
     </VirtualHost>
-'''
+\n'''
 
 __ETCHOSTS__ = {
     'posix' : '/etc/hosts',
     'nt' : 'C:\Windows\System32\Drivers\etc\hosts'
 }
 
-__HOSTNAME__ = '{0}         {1}'
+__HOSTNAME__ = '\n{0}         {1}\n'
 
 class VHCreator(object):
     def __init__(self,configFilePath,virtualHostDirectory):
@@ -41,7 +41,7 @@ class VHCreator(object):
 
     # Add virtual host script to conf file
     def addVirtualHost(self,serverName,serverPort=80,alias=''):
-        virtualHostStr = __VIRTUALHOST__.format(serverPort,self.virtualHostDirectory,serverName)
+        virtualHostStr = __VIRTUALHOST__.format(serverPort,self.virtualHostDirectory,serverName,alias)
         self.writeToFile(self.configFilePath,virtualHostStr)
 
 

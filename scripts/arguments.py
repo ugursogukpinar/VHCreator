@@ -5,12 +5,13 @@
 __author__ = 'ugursogukpinar'
 
 __TMPFILES__ = {
-    'posix'  : '/tmp',
-    'nt' : 'C:/tmp'
+    'posix'  : '/tmp/VHCreator.conf',
+    'nt' : 'C:/tmp/VHCreator.conf'
 }
 
 __ERRORS__ = {
-    ''
+    'conffilenotfound' : '{0} file not found. You have to give configuration file path.',
+    'conffilecantwrite' : 'Default configuration could not save to {0}'
 }
 
 import argparse,os,sys
@@ -27,6 +28,9 @@ class Arguments(object):
         parser.add_argument('-ho','--host', action="store_true" , help='With this option you can insert your server name into hosts file.',default=False)
         self.args = parser.parse_args()
 
+        if(len(self.args.conf)):
+            self.setConfFile(self.args.conf)
+
     def getArgs(self):
         return self.args
 
@@ -35,9 +39,18 @@ class Arguments(object):
             tmpFile = open(__TMPFILES__[os.name],'r')
             confFilePath = tmpFile.readline().strip()
             self.args.conf = confFilePath
-
         except:
-            self.returnError()
+            self.returnError('conffilenotfound',(__TMPFILES__[os.name]))
+
+
+    def setConfFile(self,confFilePath):
+        try:
+            tmpFile = open(__TMPFILES__[os.name],'w')
+            tmpFile.write(confFilePath)
+            tmpFile.flush()
+            tmpFile.close()
+        except:
+            print __ERRORS__['conffilecantwrite'].format(__TMPFILES__[os.name])
 
 
 
