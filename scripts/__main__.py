@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 #-*-coding:utf-8-*-
 
-__author__ = 'ugursogukpinar'
-
+__AUTHOR__ = 'ugursogukpinar'
+__VERSION__ = '0.1.0'
 
 from arguments import Arguments
 from VHCreator import VHCreator

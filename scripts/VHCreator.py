@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 #-*-coding:utf-8-*-
-__author__ = 'ugursogukpinar'
+__AUTHOR__ = 'ugursogukpinar'
+__VERSION__ = '0.1.0'
 
 import os,sys
 
@@ -64,5 +65,7 @@ class VHCreator(object):
             sys.exit(1) # Return with exit
 
 
+    def getVersion(self):
+        return __version__
 
 

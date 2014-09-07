@@ -2,7 +2,7 @@
 #-*-coding:utf-8-*-
 
 
-__author__ = 'ugursogukpinar'
+__AUTHOR__ = 'ugursogukpinar'
 
 __TMPFILES__ = {
     'posix'  : '/tmp/VHCreator.conf',
@@ -13,6 +13,8 @@ __ERRORS__ = {
     'conffilenotfound' : '{0} file not found. You have to give configuration file path.',
     'conffilecantwrite' : 'Default configuration could not save to {0}'
 }
+
+__VERSION__ = '0.1.0'
 
 import argparse,os,sys
 
@@ -25,7 +27,7 @@ class Arguments(object):
         parser.add_argument('directory', help='VirtualHost document root')
         parser.add_argument('-cf','--conf',help='VirtualHosts configuration file path.',default=False)
         parser.add_argument('-ho','--host', action="store_true" , help='With this option you can insert your server name into hosts file.',default=False)
-
+        parser.add_argument('-v','--version',action="version", help="Version",version='%s' % (__VERSION__))
         # To next version
         # parser.add_argument('-g','--git',help='Git repostiroy url to clone given directory',default=False)
         # parser.add_argument('-a','--alias', help='You can give an alias virtual host',default=False)
