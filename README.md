@@ -26,9 +26,3 @@ $ [sudo] pip install vhcreator
 - Added hosts could be deleted with given alias.
 
 - User can clone a git repository to given directory.
-
-
-####Contributors
--------------
-
-1. Uğur Soğukpınar
