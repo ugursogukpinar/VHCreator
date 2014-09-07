@@ -4,7 +4,7 @@ VHCreator created to manage virtual hosts. For now you can add virtual host with
 
     $ vhcreator <servername> <directory> -ho -cf /etc/apache2/sites-available/000-default.conf
 
-####installation
+####Installation
 
 ```bash
 $ [sudo] pip install vhcreator
