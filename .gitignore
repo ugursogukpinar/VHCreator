@@ -1,2 +1,4 @@
 .idea/*
 scripts/*.pyc
+VHCreator.egg-info/*
+dist/*

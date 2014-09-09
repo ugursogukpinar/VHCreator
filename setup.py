@@ -4,11 +4,11 @@ from setuptools import *
 
 setup(
     name="VHCreator",
-    version="0.1.0",
+    version="0.1.2",
     author="Uğur Soğukpınar",
     author_email="sogukpinar.ugur@gmail.com",
-    packages=["vhcreator"],
     url="https://github.com/ugursogukpinar/VHCreator",
+    packages=find_packages(),
     entry_points={
         "console_scripts": [
             "vhcreator = scripts.__main__:main",
