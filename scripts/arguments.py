@@ -48,7 +48,7 @@ class Arguments(object):
             confFilePath = tmpFile.readline().strip()
             return confFilePath
         except:
-            self.returnError('conffilenotfound',(__TMPFILES__[os.name]))
+            self.returnError('conffilenotfound',list(__TMPFILES__[os.name]))
 
 
     def setConfFile(self,confFilePath):
@@ -62,11 +62,11 @@ class Arguments(object):
 
 
 
-    def returnError(self,errorcode,**kwargs):
+    def returnError(self,errorcode,*args):
         errorStr = __ERRORS__[errorcode]
 
-        if(len(kwargs)):
-            for arg in kwargs:
+        if(len(args)):
+            for arg in args:
                 errorStr.format(arg)
 
         print errorStr
