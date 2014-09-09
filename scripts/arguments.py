@@ -5,8 +5,8 @@
 __AUTHOR__ = 'ugursogukpinar'
 
 __TMPFILES__ = {
-    'posix'  : '/tmp/VHCreator.conf',
-    'nt' : 'C:/tmp/VHCreator.conf'
+    'posix'  : '/tmp/VHCreator/VHCreator.conf',
+    'nt' : 'C:/tmp/VHCreator/VHCreator.conf'
 }
 
 __ERRORS__ = {
