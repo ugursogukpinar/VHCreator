@@ -28,8 +28,13 @@ class Arguments(object):
         parser.add_argument('-cf','--conf',help='VirtualHosts configuration file path.',default=False)
         parser.add_argument('-ho','--host', action="store_true" , help='With this option you can insert your server name into hosts file.',default=False)
         parser.add_argument('-v','--version',action="version", help="Version",version='%s' % (__VERSION__))
-        # To next version
-        # parser.add_argument('-g','--git',help='Git repostiroy url to clone given directory',default=False)
+
+
+        # git_parser = argparse.ArgumentParser(add_help=)
+        # git_parser.add_argument('-r','--repo',help='Git repository url to clone given directory',default=False)
+        #
+        # git_sub_parser = argparse.ArgumentParser(parents=[git_parser]);
+        # git_sub_parser.add_argument('--foldername',help="Foldername define which folder will use on cloning.")
         # parser.add_argument('-a','--alias', help='You can give an alias virtual host',default=False)
 
         self.args = parser.parse_args()
