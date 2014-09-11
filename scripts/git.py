@@ -52,6 +52,7 @@ class Git(object):
         try:
             subprocess.check_call(['git'] + list(args))
         except:
-            print  detail
+            print "Unexpected error: ",sys.exc_info()[0]
+            raise
 
 
