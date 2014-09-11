@@ -36,7 +36,7 @@ class VHCreator(object):
     def checkPathsExist(self,filePath):
         if(os.path.isfile(filePath) == False):
             print __ERRORS__['notfound'].format(filePath)
-            sys.exit(1) #  Return with exit
+            sys.exit(2) #  Return with exit
 
 
     # Add virtual host script to conf file
@@ -62,7 +62,7 @@ class VHCreator(object):
             file.close()
         except:
             print __ERRORS__['notopen'].format(fileDirectory)
-            sys.exit(1) # Return with exit
+            sys.exit(2)# Return with exit
 
 
     def getVersion(self):

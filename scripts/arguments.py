@@ -70,4 +70,4 @@ class Arguments(object):
                 errorStr.format(arg)
 
         print errorStr
-        sys.exit(1)
+        sys.exit(2) #Return with exit

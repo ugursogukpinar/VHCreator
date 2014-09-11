@@ -37,7 +37,7 @@ class Git(object):
             # Foldername not found.
             print __ERRORS__['filenotfound'].format(directory = serverDirectory,folderName = folderName)
             print __ERRORS__['clonfail']
-            sys.exit(1)
+            sys.exit(2)
         else:
             # Return folder index.
             return i+1
@@ -53,6 +53,6 @@ class Git(object):
             subprocess.check_call(['git'] + list(args))
         except:
             print "Unexpected error: ",sys.exc_info()[0]
-            raise
+            sys.exit(2)
 
 
