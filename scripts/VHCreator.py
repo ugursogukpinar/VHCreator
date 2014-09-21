@@ -14,8 +14,8 @@ __VIRTUALHOST__ = '''\n
     # Added with VHCreator
     # Alias of VirtualHost \'{3}\'
     <VirtualHost *:{0}>
-        DocumentRoot : {1}
-        ServerName : {2}
+        DocumentRoot {1}
+        ServerName {2}
     </VirtualHost>
 \n'''
 
