@@ -14,7 +14,7 @@ __ERRORS__ = {
     'conffilecantwrite' : 'Default configuration could not save to {0}'
 }
 
-__VERSION__ = '0.1.2'
+__VERSION__ = '0.1.3'
 
 import argparse,os,sys
 
