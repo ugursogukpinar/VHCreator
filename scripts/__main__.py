@@ -6,6 +6,7 @@ __AUTHOR__ = 'ugursogukpinar'
 
 from arguments import Arguments
 from VHCreator import VHCreator
+from git import Git
 
 def main():
     __Arguments = Arguments()
@@ -16,6 +17,9 @@ def main():
 
     if(args.host):
         __VHCreator.addHostName(args.servername)
+
+    if(args.repo):
+        Git(args.repo,args.foldername,args.directory)
 
 if __name__ == "__main__":
     main()

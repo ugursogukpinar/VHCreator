@@ -11,7 +11,8 @@ __TMPFILES__ = {
 
 __ERRORS__ = {
     'conffilenotfound' : '{0} file not found. You have to give configuration file path.',
-    'conffilecantwrite' : 'Default configuration could not save to {0}'
+    'conffilecantwrite' : 'Default configuration could not save to {0}',
+    'requiredfoldername' : 'You must give foldername with -f operator to clone directory'
 }
 
 __VERSION__ = '0.1.3'
@@ -29,13 +30,8 @@ class Arguments(object):
         parser.add_argument('-ho','--host', action="store_true" , help='With this option you can insert your server name into hosts file.',default=False)
         parser.add_argument('-v','--version',action="version", help="Version",version='%s' % (__VERSION__))
 
-
-        # git_parser = argparse.ArgumentParser(add_help=)
-        # git_parser.add_argument('-r','--repo',help='Git repository url to clone given directory',default=False)
-        #
-        # git_sub_parser = argparse.ArgumentParser(parents=[git_parser]);
-        # git_sub_parser.add_argument('--foldername',help="Foldername define which folder will use on cloning.")
-        # parser.add_argument('-a','--alias', help='You can give an alias virtual host',default=False)
+        parser.add_argument('-r','--repo',help='Git repository url to clone given directory',default=False)
+        parser.add_argument('-f','--foldername',help="Foldername define which folder will use on cloning.")
 
         self.args = parser.parse_args()
 
@@ -43,6 +39,11 @@ class Arguments(object):
             self.setConfFile(self.args.conf)
         else:
             self.args.conf = self.getConfFilePath()
+
+        if(self.args.repo):
+            if(not self.args.foldername):
+                self.returnError('requiredfoldername')
+
 
     def getArgs(self):
         return self.args
@@ -60,7 +61,6 @@ class Arguments(object):
         try:
             tmpFile = open(__TMPFILES__[os.name],'w')
             tmpFile.write(confFilePath)
-            tmpFile.flush()
             tmpFile.close()
         except:
             print __ERRORS__['conffilecantwrite'].format(__TMPFILES__[os.name])
