@@ -65,7 +65,4 @@ class VHCreator(object):
             sys.exit(2)# Return with exit
 
 
-    def getVersion(self):
-        return __version__
-
 
