@@ -18,6 +18,9 @@ In addition , you can use this options.
 * -ho With this option , you can add given <servername> to operating system hosts file
       automaticaly.
 
+* -r Git repository url to clone given directory
+* -f Foldername define which folder will use on cloning.
+
 In future
 -------------
 1. Added hosts could be deleted with given alias.

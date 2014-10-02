@@ -4,7 +4,7 @@ from setuptools import *
 
 setup(
     name="VHCreator",
-    version="0.1.3",
+    version="0.2.0",
     author="Uğur Soğukpınar",
     author_email="sogukpinar.ugur@gmail.com",
     url="https://github.com/ugursogukpinar/VHCreator",

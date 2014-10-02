@@ -18,11 +18,13 @@ $ [sudo] pip install vhcreator
 - -cf This define your server virtual hosts configuration file path
   to add virtual host. In first use you have to define it then it will be used
   on other sessions.
+
 - -ho With this option , you can add given <servername> to operating system hosts file
       automaticaly.
+- -r Git repository url to clone given directory
+
+- -f Foldername define which folder will use on cloning.
 
 ####In future
 
 - Added hosts could be deleted with given alias.
-
-- User can clone a git repository to given directory.
