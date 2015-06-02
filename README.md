@@ -16,7 +16,7 @@ $ [sudo] pip install vhcreator
 - -h HELP
 
 - -cf This define your server virtual hosts configuration file path
-  to add virtual host. In first use you have to define it then it will be used
+  to add virtual host. In first use you have to define it then it will use
   on other sessions.
 
 - -ho With this option , you can add given <servername> to operating system hosts file
