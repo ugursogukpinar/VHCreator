@@ -1,18 +1,20 @@
-####VHCreator
+VHCreator
+====
 
 VHCreator created to manage virtual hosts. For now you can add virtual host with one simply act like:
 
     $ vhcreator <servername> <directory> -ho -cf /etc/apache2/sites-available/000-default.conf
 
-####Installation
+Installation
+---
 
 ```bash
 $ [sudo] pip install vhcreator
 ```
 
 
-####Options
-
+Options
+---
 - -h HELP
 
 - -cf This define your server virtual hosts configuration file path
@@ -25,6 +27,7 @@ $ [sudo] pip install vhcreator
 
 - -f Foldername define which folder will use on cloning.
 
-####In future
+In future
+---
 
 - Added hosts could be deleted with given alias.
